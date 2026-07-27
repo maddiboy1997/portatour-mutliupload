@@ -2,7 +2,7 @@
 
 "use strict";
 
-console.log("Portatour Multi Upload Script 1.2 geladen");
+console.log("Portatour Android Enhancer 1.3 geladen");
 
 const CONTAINER_ID = "#cpcp_foto_container";
 const FILE_SELECTOR = "input[type='file']";
@@ -212,6 +212,61 @@ function getFreshInput() {
     if (!container) return null;
     return container.querySelector(FILE_SELECTOR);
 }
+
+/* =========================================
+   Bildvorschau in Android WebView korrigieren
+========================================= */
+
+const previewObserver = new MutationObserver(() => {
+
+    const img = document.getElementById("previewImage");
+
+    if (!img) return;
+    if (img.dataset.webviewFixed) return;
+
+    img.dataset.webviewFixed = "1";
+
+    img.style.display = "block";
+    img.style.maxWidth = "100%";
+    img.style.maxHeight = "70vh";
+    img.style.width = "300px";
+    img.style.height = "auto";
+    img.style.visibility = "visible";
+    img.style.opacity = "1";
+
+});
+
+previewObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+/* =========================================
+   Popup-Overlay in Android WebView korrigieren
+========================================= */
+
+const overlayObserver = new MutationObserver(() => {
+
+    const overlay = document.querySelector(".overlayItem");
+
+    if (!overlay) return;
+    if (overlay.dataset.webviewFixed) return;
+
+    overlay.dataset.webviewFixed = "1";
+
+    overlay.style.background = "rgba(0,0,0,0.45)";
+    overlay.style.position = "fixed";
+    overlay.style.left = "0";
+    overlay.style.top = "0";
+    overlay.style.right = "0";
+    overlay.style.bottom = "0";
+
+});
+
+overlayObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+});
 
 /* Initialisierung */
 enableMultiple();
