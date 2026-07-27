@@ -253,19 +253,28 @@ previewObserver.observe(document.body, {
 
 const overlayObserver = new MutationObserver(() => {
 
-    const overlay = document.querySelector(".overlayItem");
+    const overlays = document.querySelectorAll(".overlayItem");
 
-    if (!overlay) return;
-    if (overlay.dataset.webviewFixed) return;
+    for (const overlay of overlays) {
 
-    overlay.dataset.webviewFixed = "1";
+        // Nur das Overlay der Bildvorschau bearbeiten
+        if (!overlay.querySelector("#previewImage")) {
+            continue;
+        }
 
-    overlay.style.background = "rgba(0,0,0,0.45)";
-    overlay.style.position = "fixed";
-    overlay.style.left = "0";
-    overlay.style.top = "0";
-    overlay.style.right = "0";
-    overlay.style.bottom = "0";
+        if (overlay.dataset.webviewFixed) {
+            continue;
+        }
+
+        overlay.dataset.webviewFixed = "1";
+
+        overlay.style.background = "rgba(0,0,0,0.45)";
+        overlay.style.position = "fixed";
+        overlay.style.left = "0";
+        overlay.style.top = "0";
+        overlay.style.right = "0";
+        overlay.style.bottom = "0";
+    }
 
 });
 
