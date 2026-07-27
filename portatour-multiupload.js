@@ -2,6 +2,12 @@
 
 "use strict";
 
+if (window.__portatourEnhancerLoaded) {
+    console.log("Enhancer bereits geladen");
+    return;
+}
+window.__portatourEnhancerLoaded = true;
+
 console.log("Portatour Android Enhancer 1.3 geladen");
 
 const CONTAINER_ID = "#cpcp_foto_container";
@@ -228,7 +234,7 @@ const previewObserver = new MutationObserver(() => {
 
     img.style.display = "block";
     img.style.maxWidth = "100%";
-    img.style.maxHeight = "70vh";
+    img.style.maxHeight = "100%";
     img.style.width = "300px";
     img.style.height = "auto";
     img.style.visibility = "visible";
