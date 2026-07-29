@@ -1,11 +1,10 @@
 {
-    "version": "1.2.1",
-    "build": 3,
-    "required": false,
-    "download": "https://raw.githubusercontent.com/maddiboy1997/portatour-mutliupload/main/App/PortatourImproved.apk",
-    "changelog": [
-        "Mehrfachupload hinzugefügt",
-        "Bildvorschau verbessert",
-        "Diverse Fehler behoben"
-    ]
+  "version": "1.2.1",
+  "build": 4,
+  "required": false,
+  "download": "https://raw.githubusercontent.com/maddiboy1997/portatour-mutliupload/main/App/PortatourImproved.apk",
+  "changelog": [
+    "Automatische Updateprüfung",
+    "Vorbereitung für In-App-Updates"
+  ]
 }
