@@ -1,11 +1,11 @@
 {
     "version": "1.2.1",
-    "minVersion": "1.2.0",
-    "download": "https://github.com/maddiboy1997/portatour-multiupload/",
+    "build": 3,
+    "required": false,
+    "download": "https://raw.githubusercontent.com/maddiboy1997/portatour-mutliupload/main/App/PortatourImproved.apk",
     "changelog": [
-        "Mehrfachupload verbessert",
-        "Vorschaufehler behoben",
-        "Overlay bearbeitet",
-        "Update-Check hinzugefügt",
+        "Mehrfachupload hinzugefügt",
+        "Bildvorschau verbessert",
+        "Diverse Fehler behoben"
     ]
 }
