@@ -42,7 +42,7 @@ function showProgress(current, total) {
         document.body.appendChild(progressOverlay);
     }
 
-    progressOverlay.textContent = `Bild ${current} von ${total} wird hochgeladen…`;
+    progressOverlay.textContent = `Bild ${current} von ${total} wird hochgeladenâ€¦`;
 }
 
 function hideProgress() {
@@ -77,7 +77,7 @@ domObserver.observe(document.body, {
 });
 
 /* =========================================
-   Bestehende Dateien zählen
+   Bestehende Dateien zÃ¤hlen
 ========================================= */
 
 function getExistingFileCount() {
@@ -115,7 +115,7 @@ document.addEventListener('change', async function(e) {
     const filesToUpload = files.slice(0, remaining);
 
     if (files.length > remaining) {
-        alert(`Nur ${remaining} weitere Bilder möglich.`);
+        alert(`Nur ${remaining} weitere Bilder mÃ¶glich.`);
     }
 
     console.log("Multi-Upload erkannt:", filesToUpload.length);
